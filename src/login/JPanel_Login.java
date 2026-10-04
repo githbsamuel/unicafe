@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package login;
-
+import windows.admin.*;
+import windows.empleado.*;
 import java.awt.Color;
 
 
@@ -17,6 +18,9 @@ public class JPanel_Login extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JPanel_Login.class.getName());
 
     int xMouse, yMouse;
+    JPanel_mainE pageE = new JPanel_mainE();
+    JPanel_Dashboard dash = new JPanel_Dashboard();
+    
     
     public JPanel_Login() {
         initComponents();
@@ -272,8 +276,8 @@ public class JPanel_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_exitTxtMouseEntered
 
     private void exitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseExited
-         exitBtn.setBackground(Color.white);
-         exitTxt.setForeground(Color.black);
+        exitBtn.setBackground(Color.white);
+        exitTxt.setForeground(Color.black);
     }//GEN-LAST:event_exitTxtMouseExited
 
     private void entrarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrarBtnMouseEntered
@@ -307,7 +311,19 @@ public class JPanel_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_passTxtMousePressed
 
     private void entrarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_entrarBtnMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "hOLA");
+       String usuario = userTxt.getText();
+        String pass = new String(passTxt.getPassword());
+
+        if(usuario.equals("admin")){
+            dash.setLocationRelativeTo(null);
+            dash.setVisible(true);
+            this.dispose();
+
+        }else{
+            pageE.setLocationRelativeTo(null);
+            pageE.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_entrarBtnMouseClicked
 
     /**
